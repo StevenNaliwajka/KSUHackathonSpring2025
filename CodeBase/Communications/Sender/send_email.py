@@ -7,23 +7,14 @@ from email.mime.text import MIMEText
 from CodeBase.Communications.ParseData.message import Message
 from CodeBase.Communications.ParseData.secret import Secret
 from CodeBase.StandardFilePathing.get_message_folder import get_message_folder
-from CodeBase.StandardFilePathing.get_secret_folder import get_secret_folder
-from CodeBase.send_email import send_email
+from CodeBase.StandardFilePathing.get_secret_folder import get_secret_folder=
 
-if __name__ == "__main__":
+def send_email(message_path):
     # Define where codebase should look for "secret" location
     secret_path = get_secret_folder()
-    # Define where messages folder should be generated
-    messages_folder = get_message_folder()
 
     # Create Secret Object
     secret = Secret(secret_path)
-
-    try:
-        message_path = sys.argv[1]
-    except IndexError:
-        print("ERROR: Please provide the path to a JSON message file on calling of program.")
-        sys.exit(1)
 
     message = Message(message_path)
 
@@ -45,3 +36,13 @@ if __name__ == "__main__":
             print("Email sent successfully!")
         except Exception as e:
             print("Error:", e)
+
+
+if __name__ == '__main__':
+    # Ensure the correct number of arguments are provided
+    try:
+        message_path = sys.argv[1]
+        send_email(message_path)
+    except IndexError:
+        print("ERROR: Please provide the path to a JSON message file on calling of program.")
+        sys.exit(1)
