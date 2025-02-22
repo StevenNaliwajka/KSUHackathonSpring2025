@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+<div class="home login">
+    <h1 class="headerhome">Enter Your Detaills</h1>
+    <form methods="POST" action="/">
+        <label for="name" class="form-label">Name:</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+    
+        <label for="phone" class="form-label">Phone Number:</label>
+        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number" required>
+        <button type="submit" class="button-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}
+
+
