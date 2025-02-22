@@ -1,7 +1,7 @@
 # KSUHackathonSpring2025
 ## SETUP:
 run setup.py to populate json files and secret .env files
-for email and text automation.
+for email and text automation. and build database
 
 ' python3 setup.py '
 
