@@ -1,12 +1,10 @@
-import os
 import sys
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 from CodeBase.Communications.ParseData.message import Message
-from CodeBase.Communications.ParseData.secret import Secret
-from CodeBase.StandardFilePathing.get_message_folder import get_message_folder
+from CodeBase.secret import Secret
 from CodeBase.StandardFilePathing.get_secret_folder import get_secret_folder=
 
 def send_email(message_path):

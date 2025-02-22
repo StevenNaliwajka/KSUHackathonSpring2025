@@ -12,9 +12,9 @@ def create_text_secret(secret_path):
 
     if not env_file_path.exists():
         # Define the contents of the .env file
-        env_content = """ACCOUNT_SID=
-AUTH_TOKEN=
-MY_NUMBER="""
+        env_content = """TWILIO_ACCOUNT_SID=
+TWILIO_AUTH_TOKEN=
+TWILIO_PHONE_NUMBER="""
 
         # Write the contents to the .env file
         with open(env_file_path, "w") as env_file:
