@@ -1,7 +1,7 @@
 from pathlib import Path
 
 
-def create_secret(secret_path):
+def create_email_secret(secret_path):
     path = Path(secret_path)
 
     # Create the directory if it doesn't exist (including parent directories if needed)

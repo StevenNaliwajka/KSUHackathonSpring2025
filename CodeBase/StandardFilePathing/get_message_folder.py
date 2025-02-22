@@ -11,6 +11,12 @@ def get_message_folder():
     # Message Folder Path:
     # Messages stores formating for broadcasting data in JSON files. Generated on run.
     message_folder_name = "Messages"
-    message_path = path.join(parent_directory, "Communications", message_folder_name)
+    # Qty of directories to rise
+    num_directories = 3
+
+    current_directory = os.path.abspath(__file__)
+    up_levels = ['..'] * num_directories
+    parent_directory = os.path.abspath(os.path.join(current_directory, *up_levels))
+    message_path = path.join(parent_directory, message_folder_name)
 
     return message_path

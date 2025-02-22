@@ -1,6 +1,6 @@
 import os
 import sqlite3
-from CodeBase.FilePathing.get_sql_scripts_folder import get_sql_scripts_folder
+from CodeBase.StandardFilePathing.get_sql_scripts_folder import get_sql_scripts_folder
 from DataBase.Scripts.FirstTime.create_tables import create_tables
 from DataBase.Scripts.FirstTime.populate_tables_demo import populate_tables_demo
 

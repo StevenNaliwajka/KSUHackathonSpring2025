@@ -22,8 +22,6 @@ def create_default_text_json(message_path):
             "BODY": "Hello, this is a test text sent using Python."
         }
 
-
-
         # Write the JSON data to the file with an indent for readability
         with open(json_file_path, "w") as json_file:
             json.dump(data, json_file, indent=2)
