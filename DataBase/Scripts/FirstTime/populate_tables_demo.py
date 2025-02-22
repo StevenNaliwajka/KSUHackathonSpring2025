@@ -12,4 +12,4 @@ def populate_tables_demo(cursor, script_folder):
     call_sql_script(cursor, script_folder, "demo_notification_weather.sql")
     call_sql_script(cursor, script_folder, "demo_ongoing_events.sql")
     call_sql_script(cursor, script_folder, "demo_team.sql")
-    call_sql_script(cursor, script_folder, "demo_user.sql")
+    call_sql_script(cursor, script_folder, "demo_admin_users.sql")

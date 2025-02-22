@@ -12,4 +12,4 @@ def create_tables(cursor, script_folder):
     call_sql_script(cursor, script_folder, "create_notification_weather.sql")
     call_sql_script(cursor, script_folder, "create_ongoing_events.sql")
     call_sql_script(cursor, script_folder, "create_team.sql")
-    call_sql_script(cursor, script_folder, "create_user.sql")
+    call_sql_script(cursor, script_folder, "create_admin_users.sql")
