@@ -1,4 +1,4 @@
 CREATE TABLE IF NOT EXISTS team (
-    id INTEGER PRIMARY KEY,  -- Automatically increments the ID
-    name TEXT NOT NULL
+    team_id INTEGER PRIMARY KEY,  -- Automatically increments the ID
+    team_name TEXT NOT NULL
 );

@@ -1,7 +1,7 @@
 from pathlib import Path
 
 
-def create_email_secret(secret_path):
+def create_text_secret(secret_path):
     path = Path(secret_path)
 
     # Create the directory if it doesn't exist (including parent directories if needed)
@@ -12,10 +12,9 @@ def create_email_secret(secret_path):
 
     if not env_file_path.exists():
         # Define the contents of the .env file
-        env_content = """SMTP_SERVER=
-SMTP_PORT=
-USER_EMAIL_ADDRESS=
-APP_PASSWORD="""
+        env_content = """ACCOUNT_SID=
+AUTH_TOKEN=
+MY_NUMBER="""
 
         # Write the contents to the .env file
         with open(env_file_path, "w") as env_file:
