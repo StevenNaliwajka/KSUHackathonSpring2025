@@ -5,6 +5,8 @@ import sys
 if __name__ == "__main__":
     # NOT PERMA. QUICK AND DIRTY VENV CREATION FOR PROTOTYPING.
 
+    os.environ["FLASK_APP"] = "app.py"
+
     packages_to_install = ["Flask", "app", "python-dotenv"]
 
     # Define the venv directory
