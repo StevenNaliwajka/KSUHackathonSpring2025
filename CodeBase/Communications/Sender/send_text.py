@@ -1,5 +1,6 @@
+from twilio.rest import Client
+
 def send_text():
-    from twilio.rest import Client
 
     # Your Twilio credentials
     account_sid = 'your_account_sid'
