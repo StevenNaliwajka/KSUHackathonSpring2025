@@ -10,3 +10,9 @@ For demoing messaging (email/text) people:
 Generates a VENV, and installs packages if not installed.
 
 ' python3 run_message_people.py '
+
+## Demo, "Website"
+For demoing website:
+Generates a VENV, and installs packages if not installed.
+
+' python3 run_main_website.py '
