@@ -5,7 +5,7 @@ from email.mime.text import MIMEText
 
 from CodeBase.Communications.ParseData.message import Message
 from CodeBase.secret import Secret
-from CodeBase.StandardFilePathing.get_secret_folder import get_secret_folder=
+from CodeBase.StandardFilePathing.get_secret_folder import get_secret_folder
 
 def send_email(message_path):
     # Define where codebase should look for "secret" location
