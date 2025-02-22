@@ -1,17 +1,17 @@
 import os
 import sys
 
-from CodeBase.FilePathing.get_message_path import get_message_path
-from CodeBase.FilePathing.get_secret_path import get_secret_path
+from CodeBase.FilePathing.get_message_folder import get_message_folder
+from CodeBase.FilePathing.get_secret_folder import get_secret_folder
 from CodeBase.Parse.message import Message
 from CodeBase.Parse.secret import Secret
 from CodeBase.send_email import send_email
 
 if __name__ == "__main__":
     # Define where codebase should look for "secret" location
-    secret_path = get_secret_path()
+    secret_path = get_secret_folder()
     # Define where messages folder should be generated
-    messages_folder = get_message_path()
+    messages_folder = get_message_folder()
 
     # Create Secret Object
     secret = Secret(secret_path)

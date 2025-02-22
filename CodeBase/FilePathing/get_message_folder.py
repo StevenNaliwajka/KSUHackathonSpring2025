@@ -2,7 +2,7 @@ import os
 from os import path
 
 
-def get_message_path():
+def get_message_folder():
     # Global message Pathing. Changes here reflect everywhere.
 
     this_directory = path.abspath(path.dirname(__file__))

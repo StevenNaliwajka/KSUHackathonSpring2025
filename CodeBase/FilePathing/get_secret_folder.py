@@ -2,7 +2,7 @@ import os
 from os import path
 
 
-def get_secret_path():
+def get_secret_folder():
     # Global secret Pathing. Changes here reflect everywhere.
 
     # Secret Folder Path:

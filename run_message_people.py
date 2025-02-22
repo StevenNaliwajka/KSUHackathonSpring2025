@@ -22,7 +22,7 @@ if __name__ == "__main__":
 
     # Path to the virtual environment Python
     if os.name == "nt":
-        venv_python = os.path.join(venv_dir, 'Scripts', 'python.exe')
+        venv_python = os.path.join(venv_dir, 'SQLScripts', 'python.exe')
     else:
         venv_python = os.path.join(venv_dir, 'bin', 'python')
 
