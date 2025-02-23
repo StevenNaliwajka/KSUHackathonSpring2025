@@ -29,6 +29,8 @@ def call_sql_script(script_name, params=None):
     # Convert the rows to a 2D array (list of lists)
     result_array = [list(row) for row in rows]
 
+    connection.commit()
+
     # Clean up: close the cursor and connection
     cursor.close()
     connection.close()

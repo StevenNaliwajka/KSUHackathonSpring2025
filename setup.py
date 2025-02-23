@@ -3,7 +3,6 @@ from CodeBase.StandardFilePathing.get_config_folder import get_config_folder
 from CodeBase.StandardFilePathing.get_database_path import get_database_path
 from CodeBase.StandardFilePathing.get_message_folder import get_message_folder
 from CodeBase.StandardFilePathing.get_secret_folder import get_secret_folder
-from DataBase.Scripts.FirstTime.create_db_and_populate import create_db_and_populate
 
 if __name__ == "__main__":
     # Local Pathing is defined in the below methods. One change changes everywhere

@@ -1,4 +1,4 @@
-import importlib
+from importlib import util
 import os
 import sys
 
@@ -26,8 +26,8 @@ if __name__ == "__main__":
     # Adjust "Core" if your directory structure is different
 
     # Dynamically load the module
-    spec = importlib.util.spec_from_file_location(module_name, module_path)
-    mod = importlib.util.module_from_spec(spec)
+    spec = util.spec_from_file_location(module_name, module_path)
+    mod = util.module_from_spec(spec)
     spec.loader.exec_module(mod)
 
     # Now call the function. If your function is also named `test_db_core`,
