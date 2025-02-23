@@ -1,0 +1,2 @@
+SELECT phone
+FROM Master_Students

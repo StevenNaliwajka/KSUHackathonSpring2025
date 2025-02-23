@@ -1,0 +1,7 @@
+{
+  "TO_CONTACT": [
+    "get_every_student_phone.sql"
+  ],
+  "SUBJECT": "Are you interested in KSU Sports?",
+  "BODY": "Reply based on your sport to be enrolled in push notifcations: 1: Soccer, 2: Football......"
+}

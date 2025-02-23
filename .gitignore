@@ -171,8 +171,9 @@ cython_debug/
 .pypirc
 .idea
 Config/
-Messages/
 Secret/
 Data/
 website_qrcode.png
 advertising_material.png
+example_email.json
+example_text.json
