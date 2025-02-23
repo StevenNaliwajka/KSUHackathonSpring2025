@@ -2,13 +2,16 @@ import os
 import subprocess
 import sys
 
+from CodeBase.StandardFilePathing.get_project_root import get_project_root
+
 if __name__ == "__main__":
     # NOT PERMA. QUICK AND DIRTY VENV CREATION FOR PROTOTYPING.
 
     packages_to_install = []
 
+    proj_root = get_project_root()
     # Define the venv directory
-    venv_dir = os.path.join(os.path.dirname(__file__), 'venv')
+    venv_dir = os.path.join(proj_root, 'venv')
 
     # Check if venv exists
     if not os.path.exists(venv_dir):
@@ -58,5 +61,6 @@ if __name__ == "__main__":
         # print("All packages are already installed.")
 
     # Run the main script using the virtual environment Python
-    main_script = os.path.join(os.path.dirname(__file__), 'CodeBase', "ComeToTheGame", "come_to_the_game.py")
+    main_script = os.path.join(os.path.dirname(__file__), "Core", "test_email_core.py")
+    print(f"Running {main_script}")
     subprocess.run([venv_python, main_script] + sys.argv[1:])

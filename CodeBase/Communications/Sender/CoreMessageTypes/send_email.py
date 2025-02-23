@@ -3,15 +3,11 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-from CodeBase.Communications.ParseData.message import Message
 from CodeBase.secret import Secret
 from CodeBase.StandardFilePathing.get_secret_folder import get_secret_folder
 
 def send_email(contact, subject, body):
-    # Define where codebase should look for "secret" location
     secret_path = get_secret_folder()
-
-    # Create Secret Object
     secret = Secret(secret_path)
 
     msg = MIMEMultipart()
@@ -20,10 +16,9 @@ def send_email(contact, subject, body):
     msg["Subject"] = subject
     msg.attach(MIMEText(body, "plain"))
 
-    # Send the email
     try:
-        server = smtplib.SMTP(secret.smtp_server, secret.smtp_port)
-        server.starttls()  # Secure the connection
+        # Directly use SMTP_SSL for SSL connections
+        server = smtplib.SMTP_SSL(secret.smtp_server, secret.smtp_port)
         server.login(secret.user_email_address, secret.app_password)
         server.sendmail(secret.user_email_address, contact, msg.as_string())
         server.quit()
