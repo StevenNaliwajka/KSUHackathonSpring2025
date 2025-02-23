@@ -1,56 +1,64 @@
+{% extends "base.html" %}
 {% block title %}Dashboard{% endblock %}
 
 {% block content %}
-<div class="container-fluid">
-    <div class="">
-        <img src="static/blankProfile.png" alt="athlete photo">
-        <p class="bold">Athlete 1 Name</p>
+<div class="container-fluid justify-content-center mb-5">
+    <div class="border border-dark-subtle mt-5 d-flex flex-column justify-content-center align-items-center border-2 bg-light shadow" style="min-height: 300px;">
+        <img src="static/blankProfile.png" alt="athlete photo" class="img-fluid rounded mx-auto d-block" height="50" width="100">
+        <p class="mt-2 text-center fw-bold">Athlete 1 Name</p>
         <form action="/submit-picks" method="POST">
-            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                <input type="radio" class="btn-check" name="pick1" id="underBtn1" value="false">
-                <label for="underBtn1" class="btn btn-outline-primary">Under</label>
-                <p>avg</p>
-                <input type="radio" class="btn-check" name="pick1" id="overBtn1" value="true">
-                <label for="overBtn1" class="btn btn-outline-primary">Over</label>
+            <div class="d-flex align-items-center justify-content-center">
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" name="pick1" id="underBtn1" value="false">
+                    <label for="underBtn1" class="btn btn-outline-primary mr-3">Under</label>
+                    
+                    <p class="mx-2">avg</p>
+                    
+                    <input type="radio" class="btn-check" name="pick1" id="overBtn1" value="true">
+                    <label for="overBtn1" class="btn btn-outline-primary ml-3">Over</label>
+                </div>
             </div>
+            
         </form>
     </div>
-    <div class="">
-        <img src="static/blankProfile.png" alt="athlete photo">
-        <p class="bold">Athlete 2 Name</p>
+    <div class="border border-dark-subtle mt-5 d-flex flex-column justify-content-center align-items-center border-2 bg-light shadow" style="min-height: 300px;">
+        <img src="static/blankProfile.png" alt="athlete photo" class="img-fluid rounded mx-auto d-block" height="50" width="100">
+        <p class="mt-2 text-center fw-bold">Athlete 2 Name</p>
         <form action="/submit-picks" method="POST">
-            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                <input type="radio" class="btn-check" name="pick2" id="underBtn2" value="false">
-                <label for="underBtn2" class="btn btn-outline-primary">Under</label>
-                <p>avg</p>
-                <input type="radio" class="btn-check" name="pick2" id="overBtn2" value="true">
-                <label for="overBtn2" class="btn btn-outline-primary">Over</label>
+            <div class="d-flex align-items-center justify-content-center">
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" name="pick2" id="underBtn2" value="false">
+                    <label for="underBtn2" class="btn btn-outline-primary mr-3">Under</label>
+                    
+                    <p class="mx-2">avg</p>
+                    
+                    <input type="radio" class="btn-check" name="pick2" id="overBtn2" value="true">
+                    <label for="overBtn2" class="btn btn-outline-primary ml-3">Over</label>
+                </div>
             </div>
+            
         </form>
     </div>
-    <div class="">
-        <img src="static/blankProfile.png" alt="athlete photo">
-        <p class="bold">Athlete 3 Name</p>
+    <div class="border border-dark-subtle mt-5 d-flex flex-column justify-content-center align-items-center border-2 bg-light shadow" style="min-height: 300px;">
+        <img src="static/blankProfile.png" alt="athlete photo" class="img-fluid rounded mx-auto d-block" height="50" width="100">
+        <p class="mt-2 text-center fw-bold">Athlete 3 Name</p>
         <form action="/submit-picks" method="POST">
-            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                <input type="radio" class="btn-check" name="pick3" id="underBtn3" value="false">
-                <label for="underBtn3" class="btn btn-outline-primary">Under</label>
-                <p>avg</p>
-                <input type="radio" class="btn-check" name="pick3" id="overBtn3" value="true">
-                <label for="overBtn3" class="btn btn-outline-primary">Over</label>
+            <div class="d-flex align-items-center justify-content-center">
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" name="pick3" id="underBtn3" value="false">
+                    <label for="underBtn3" class="btn btn-outline-primary mr-3">Under</label>
+                    
+                    <p class="mx-2">avg</p>
+                    
+                    <input type="radio" class="btn-check" name="pick3" id="overBtn3" value="true">
+                    <label for="overBtn3" class="btn btn-outline-primary ml-3">Over</label>
+                </div>
             </div>
+            
         </form>
-    </div>
-    <div>
-        <p>Who will win?</p>
-        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-            <input type="radio" class="btn-check" name="winner" id="homeBtn" value="true">
-            <label for="homeBtn" class="btn btn-outline-primary">Home</label>
-            <input type="radio" class="btn-check" name="winner" id="awayBtn" value="false">
-            <label for="awayBtn" class="btn btn-outline-primary">Away</label>
-        </div>
     </div>
 </div>
-    
-<button type="button" class="btn btn-primary">Submit</button>
+<div class="d-grid gap-2 ">
+    <button type="button" class="btn btn-primary mb-5">Submit</button>
+</div>
 {% endblock %}
