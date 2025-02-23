@@ -33,3 +33,13 @@ def call_sql_script(script_name):
 
     # return the result
     return result_array
+
+
+if __name__ == '__main__':
+    # Ensure the correct number of arguments are provided
+    try:
+        message_path = sys.argv[1]
+        send_text(message_path)
+    except IndexError:
+        print("ERROR: Please provide the path to a JSON message file on calling of program.")
+        sys.exit(1)

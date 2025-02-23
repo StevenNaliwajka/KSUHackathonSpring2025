@@ -11,6 +11,11 @@ def get_db_conn_str():
     database_secret_path = os.path.join(secret_folder, 'mail_secret.env')
     load_dotenv(database_secret_path)
 
+    driver = "ODBC+Driver+17+for+SQL+Server"
+    server = os.getenv("DB_SERVER")
+    database = os.getenv("DB_NAME")
+    username = os.getenv("DB_USERNAME")
+    password = os.getenv("DB_PASSWORD")
 
     conn_str = (
         f'DRIVER={driver};'
