@@ -1,2 +1,3 @@
 SELECT *
-FROM ATHLETES
+FROM Athletes
+WHERE student_id = ?;
