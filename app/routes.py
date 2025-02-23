@@ -7,16 +7,23 @@ app.secret_key= "hello"
 def index():
     data = request.form
 
+    # Process 'Contact Information' HTML Form
     if request.method=='POST':
         
-        name = request.form.get('name')
-        phone = request.form.get('phone')
+        first_name = request.form.get("first-name")
+        last_name = request.form.get("last-name")
+        email = request.form.get("email")
+        phone = request.form.get("phone")
+        
+        # IMPLEMENT WEATHER NOTIFCATION
         weather_updates = request.form.get('weatherUpdates') == "True"
         future_games = request.form.get('futureGames') == "True"
-
         
+        # SQL: Insert User into Database
+         
         session["user"] = {
-            "name": name,
+            "first_name": first_name,
+            "last_name": last_name,
             "phone": phone,
             "weather_updates": weather_updates,
             "future_games": future_games,
