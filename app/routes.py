@@ -47,10 +47,10 @@ def submit_picks():
         return redirect(url_for("index"))
     
     picks = {
-        "pick1": request.form.get("pick1"),
-        "pick2": request.form.get("pick2"),
-        "pick3": request.form.get("pick3"),
-        "winner": request.form.get("winner"),
+        "pick1": request.form.get("pick1", "False"),
+        "pick2": request.form.get("pick2", "False"),
+        "pick3": request.form.get("pick3", "False"),
+        "winner": request.form.get("winner", "Home"),
     }
 
 #True is over false is under
@@ -60,14 +60,20 @@ def submit_picks():
         "pick3": "True",
         "winner": "Home"
     }
+    
 
+#check against the correct answer
     points = 0
     results = {}
     for pick, user_choice in picks.items():
-        is_correct = user_choice == correct_answers[pick]
-        results[pick] = is_correct
-        if is_correct:
-            points +=1
+        if user_choice is not None:
+            is_correct = user_choice == correct_answers[pick]
+            results[pick] = {
+                "choice": user_choice,
+                "correct": is_correct
+                }
+            if is_correct:
+                points +=1
 
 
 #temporary placeholder for the points and results until we get the database in
