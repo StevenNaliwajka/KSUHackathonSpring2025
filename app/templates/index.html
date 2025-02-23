@@ -3,28 +3,38 @@
 
 {% block content %}
 <div class="home login">
-    <h1 class="headerhome text-center">Enter Your Detaills</h1>
+    <h1 class="headerhome text-center">Spectator Contact Form</h1>
     <form method="POST" action="/">
         <div class="mb-3">
-            <label for="name" class="form-label">Name:</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+            <input type="text" class="form-control" id="first-name" name="first-name" placeholder="First Name" required>
         </div>
         <div class="mb-3">
-            <label for="phone" class="form-label">Phone Number:</label>
-            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number" required>
+            <input type="text" class="form-control" id="last-name" name="last-name" placeholder="Last Name" required>
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
+        </div>
+        <div class="mb-3">
+            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number" required>
         </div>
         <div class="mx-auto mb-3">
             <div class="form-check form-check-inline mr-300">
-                <input class="form-check-input" type="checkbox" value="False" id="weatherUpdates" name="weatherUpdates">
-                <label class="form-check-label" for="weatherUpdates">
-                  Opt in for Weather updates
+                <input class="form-check-input" type="checkbox" value="False" id="weather-updates" name="weather-updatews">
+                <label class="form-check-label" for="weather-updates">
+                  Receive Weather Updates (SMS)
                 </label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" value="False" id="futureGames" name="futureGames">
-                <label class="form-check-label" for="futureGames">
-                  Opt in for future games
+                <input class="form-check-input" type="checkbox" value="False" id="future-game-updates-SMS" name="future-game-updates-SMS">
+                <label class="form-check-label" for="future-game-updates-SMS">
+                  Receive Info on Upcoming Games (SMS)
                 </label>
+            </div>
+            <div>
+                <input class="form-check-input" type="checkbox" value="False" id="future-game-updates-email" name="future-game-updates-email">
+                <label class="form-check-label" for="future-game-updates-email">
+                    Reveive Info on Upcoming Games (email)
+                  </label>
             </div>
         </div>
         <div class="d-grid gap-2 ">
