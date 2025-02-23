@@ -1,3 +1,3 @@
 SELECT *
 FROM Athletes
-WHERE student_id = ?;
+WHERE student_id = %s;
