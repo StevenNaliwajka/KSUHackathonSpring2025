@@ -1,11 +1,14 @@
 import os
 import subprocess
 import sys
+import sqlite3
 
 if __name__ == "__main__":
     # NOT PERMA. QUICK AND DIRTY VENV CREATION FOR PROTOTYPING.
 
-    packages_to_install = ["pymssql", "load_dotenv", "load_dotenv","Flask", "app", "python-dotenv"]
+    packages_to_install = ["pymssql", "load_dotenv", "load_dotenv","Flask", "app", "python-dotenv", "twilio"]
+
+    # packages_to_install = ["load_dotenv", "load_dotenv", "Flask", "app", "python-dotenv"]
 
     # Define the venv directory
     venv_dir = os.path.join(os.path.dirname(__file__), 'venv')

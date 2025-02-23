@@ -1,5 +1,6 @@
 import sys
 import smtplib
+import ssl
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
@@ -11,16 +12,27 @@ def send_email(contact, subject, body):
     secret = Secret(secret_path)
 
     msg = MIMEMultipart()
+    # print(secret.user_email_address)
     msg["From"] = secret.user_email_address
     msg["To"] = contact
     msg["Subject"] = subject
     msg.attach(MIMEText(body, "plain"))
 
     try:
-        server = smtplib.SMTP()
-        server.set_debuglevel(1)  # Enable debug output
-        server.connect(secret.smtp_server, secret.smtp_port)
-        server.starttls()  # Secure the connection
+        # Create an SSL context
+        context = ssl.create_default_context()
+
+        # Instantiate the SMTP object with server and port so that self.host is set
+        server = smtplib.SMTP(secret.smtp_server, secret.smtp_port)
+        # server.set_debuglevel(1)  # Enable debug output
+        #print(f"smtp_server {secret.smtp_server}")
+        #print(f"smtp_port {secret.smtp_port}")
+
+        server.ehlo()
+        # Call starttls() with the SSL context (do not pass server_hostname)
+        server.starttls(context=context)
+        server.ehlo()
+
         server.login(secret.user_email_address, secret.app_password)
         server.sendmail(secret.user_email_address, contact, msg.as_string())
         server.quit()
