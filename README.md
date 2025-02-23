@@ -1,18 +1,37 @@
 # KSUHackathonSpring2025
 ## SETUP:
-run setup.py to populate json files and secret .env files
-for email and text automation. and build database
+Ensure you have python installed, tested on 3.9+
 
-' python3 setup.py '
+run 'run_setup.py' in the root directory to populate json files and secret .env files
+for email and text automation
 
-## Demo, "ComeToTheGame"
-For demoing messaging (email/text) people:  
-Generates a VENV, and installs packages if not installed.
+' python3 run_setup.py '
 
+### If using Mac:
+Must also have HomeBrew Installed and install:
+
+'brew install freetds'
+### IF using Linux:
+Must also install freetds, package manager is unique per distro.
+
+-----------------------------------------------
+
+## CONFIG:
+After setup. See "Secret/" in project root to fill out 
+- db_secret.env : Stores login info for a MS SQL DB
+- mail_secret.env : Stores login info for automation of sending emails.
+- text_secret.env : stores login info for automation of sending texts.
+
+------------------------------------------------------------------------------
+
+# UseCase:
+
+## "ComeToTheGame"
+For bulk messaging (email/text) people:  
+In project root:  
 ' python3 run_message_people.py '
 
-## Demo, "Website"
-For demoing website:
-Generates a VENV, and installs packages if not installed.
-
+## "AtTheGame"
+launches website on localhost:  
+In project root:  
 ' python3 run_main_website.py '
