@@ -26,61 +26,64 @@ def index():
 
     return render_template('index.html')
 
-@app.route('/dashboard')
-def dashboard():
-    user = session.get("user")
-    print("User session data:", user)
+# @app.route('/dashboard')
+# def dashboard():
+#     user = session.get("user")
+#     print("User session data:", user)
     
-    if not user:
-        return redirect(url_for("index"))
-    #place holder list to track users input for the picks until database is done
-    user_picks = []
+#     if not user:
+#         return redirect(url_for("index"))
+#     #place holder list to track users input for the picks until database is done
+#     user_picks = []
 
-    return render_template('dashboard.html', user=user, picks=user_picks)
+#     return render_template('dashboard.html', user=user, picks=user_picks)
 
 
-@app.route('/submit-picks', methods=["POST"])
-def submit_picks():
+@app.route('/dashboard', methods=["GET","POST"])
+def dashboard():
     user = session.get("user") #grab the current users session
 
     if not user:
         return redirect(url_for("index"))
+    user_picks = []
     
-    picks = {
-        "pick1": request.form.get("pick1", "False"),
-        "pick2": request.form.get("pick2", "False"),
-        "pick3": request.form.get("pick3", "False"),
-        "winner": request.form.get("winner", "Home"),
-    }
+    if request.method == 'POST':
 
-#True is over false is under
-    correct_answers = {
-        "pick1": "True",
-        "pick2": "False",
-        "pick3": "True",
-        "winner": "Home"
-    }
-    
+        picks = {
+            "pick1": request.form.get("pick1",True),
+            "pick2": request.form.get("pick2",False),
+            "pick3": request.form.get("pick3",False),
+        }
 
-#check against the correct answer
-    points = 0
-    results = {}
-    for pick, user_choice in picks.items():
-        if user_choice is not None:
-            is_correct = user_choice == correct_answers[pick]
-            results[pick] = {
-                "choice": user_choice,
-                "correct": is_correct
-                }
-            if is_correct:
-                points +=1
+    #True is over false is under
+        correct_answers = {
+            "pick1": True,
+            "pick2": False,
+            "pick3": True,
+        }
+        
+
+    #check against the correct answer
+        points = 0
+        results = []
+        userChoices = []
+        for pick, user_choice in picks.items():
+            if user_choice is not None:
+                is_correct = user_choice == correct_answers[pick]
+                results.append(is_correct)
+                userChoices.append(user_choice)
+                if is_correct:
+                    points +=1
 
 
-#temporary placeholder for the points and results until we get the database in
-    session["results"] = results
-    session["points"] = points
-
-    return redirect(url_for("results"))
+    #temporary placeholder for the points and results until we get the database in
+        session["results"] = results
+        session["userChoices"] = userChoices
+        session["points"] = points
+        print(results)
+        print(userChoices)
+        return render_template('results.html', results=results, userChoices=userChoices)
+    return render_template('dashboard.html', user=user, picks=user_picks)
 
 @app.route('/results')
 def results():
@@ -89,10 +92,13 @@ def results():
     if not user:
         return redirect(url_for("index"))
     
-    results = session.get("results", {}) #default to empty if no results
+    results = session.get("results", []) #default to empty if no results
+    userChoices = session.get("userChoices", [])
     points = session.get("points", 0) #default 0 points
-
-    return render_template("results.html", user=user, results=results, points=points)
+    print(results)
+    print(userChoices)
+    print(points)
+    return render_template("results.html", user=user, results=results, points=points, userChoices = userChoices)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():

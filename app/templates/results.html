@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+{% block title %}Results{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid justify-content-center mb-5">
+    <div class="border border-dark-subtle mt-5 d-flex flex-column justify-content-center align-items-center border-2 bg-light shadow" style="min-height: 300px;">
+        <img src="static/blankProfile.png" alt="athlete photo" class="img-fluid rounded mx-auto d-block" height="50" width="100">
+        <p class="mt-2 text-center fw-bold">Athlete 1 Name</p>
+        <form action="/submit-picks" method="POST">
+            <div class="d-flex align-items-center justify-content-center">
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                    {%if userChoices[0] and results[0]%}
+                    <input type="radio" class="btn-check" name="pick1" id="underBtn1" value="false" disabled>
+                    <label for="underBtn1" class="btn btn-outline-success mr-3">Under</label>
+                    
+                    <p class="mx-2">avg</p>
+                    
+                    <input type="radio" class="btn-check" name="pick1" id="overBtn1" value="true" checked disabled>
+                    <label for="overBtn1" class="btn btn-outline-success ml-3">Over</label>
+                    {%elif userChoices[0] and not results[0] %}
+                    <input type="radio" class="btn-check" name="pick1" id="underBtn1" value="false" disabled>
+                    <label for="underBtn1" class="btn btn-outline-danger mr-3">Under</label>
+                    
+                    <p class="mx-2">avg</p>
+                    
+                    <input type="radio" class="btn-check" name="pick1" id="overBtn1" value="true" disabled checked>
+                    <label for="overBtn1" class="btn btn-outline-danger ml-3">Over</label>
+                    {%elif not userChoices[0] and results[0] %}
+                    <input type="radio" class="btn-check" name="pick1" id="underBtn1" value="false" checked disabled>
+                    <label for="underBtn1" class="btn btn-outline-success mr-3">Under</label>
+                    
+                    <p class="mx-2">avg</p>
+                    
+                    <input type="radio" class="btn-check" name="pick1" id="overBtn1" value="true" disabled>
+                    <label for="overBtn1" class="btn btn-outline-success ml-3">Over</label>
+                    {%else%}
+                    <input type="radio" class="btn-check" name="pick1" id="underBtn1" value="false" checked disabled>
+                    <label for="underBtn1" class="btn btn-outline-danger mr-3">Under</label>
+                    
+                    <p class="mx-2">avg</p>
+                    
+                    <input type="radio" class="btn-check" name="pick1" id="overBtn1" value="true" disabled>
+                    <label for="overBtn1" class="btn btn-outline-danger ml-3">Over</label>
+                    {%endif%}
+                </div>
+            </div>
+            
+        </form>
+    </div>
+    <div class="border border-dark-subtle mt-5 d-flex flex-column justify-content-center align-items-center border-2 bg-light shadow" style="min-height: 300px;">
+        <img src="static/blankProfile.png" alt="athlete photo" class="img-fluid rounded mx-auto d-block" height="50" width="100">
+        <p class="mt-2 text-center fw-bold">Athlete 2 Name</p>
+        <form action="/submit-picks" method="POST">
+            <div class="d-flex align-items-center justify-content-center">
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                    {%if userChoices[1] and results[1]%}
+                    <input type="radio" class="btn-check" name="pick2" id="underBtn2" value="false" disabled>
+                    <label for="underBtn2" class="btn btn-outline-success mr-3">Under</label>
+                    
+                    <p class="mx-2">avg</p>
+                    
+                    <input type="radio" class="btn-check" name="pick2" id="overBtn2" value="true" checked disabled>
+                    <label for="overBtn2" class="btn btn-outline-success ml-3">Over</label>
+                    {%elif userChoices[1] and not results[1] %}
+                    <input type="radio" class="btn-check" name="pick2" id="underBtn2" value="false" disabled>
+                    <label for="underBtn2" class="btn btn-outline-danger mr-3">Under</label>
+                    
+                    <p class="mx-2">avg</p>
+                    
+                    <input type="radio" class="btn-check" name="pick2" id="overBtn2" value="true" disabled checked>
+                    <label for="overBtn2" class="btn btn-outline-danger ml-3">Over</label>
+                    {%elif not userChoices[1] and results[1] %}
+                    <input type="radio" class="btn-check" name="pick2" id="underBtn2" value="false" checked disabled>
+                    <label for="underBtn2" class="btn btn-outline-success mr-3">Under</label>
+                    
+                    <p class="mx-2">avg</p>
+                    
+                    <input type="radio" class="btn-check" name="pick2" id="overBtn2" value="true" disabled>
+                    <label for="overBtn2" class="btn btn-outline-success ml-3">Over</label>
+                    {%else%}
+                    <input type="radio" class="btn-check" name="pick2" id="underBtn2" value="false" checked disabled>
+                    <label for="underBtn2" class="btn btn-outline-danger mr-3">Under</label>
+                    
+                    <p class="mx-2">avg</p>
+                    
+                    <input type="radio" class="btn-check" name="pick2" id="overBtn2" value="true" disabled>
+                    <label for="overBtn2" class="btn btn-outline-danger ml-3">Over</label>
+                    {%endif%}
+                </div>
+            </div>
+            
+        </form>
+    </div>
+    <div class="border border-dark-subtle mt-5 d-flex flex-column justify-content-center align-items-center border-2 bg-light shadow" style="min-height: 300px;">
+        <img src="static/blankProfile.png" alt="athlete photo" class="img-fluid rounded mx-auto d-block" height="50" width="100">
+        <p class="mt-2 text-center fw-bold">Athlete 3 Name</p>
+        <form action="/submit-picks" method="POST">
+            <div class="d-flex align-items-center justify-content-center">
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                    {%if userChoices[2] and results[2] %}
+                    <input type="radio" class="btn-check" name="pick3" id="underBtn3" value="false" disabled>
+                    <label for="underBtn3" class="btn btn-outline-success mr-3">Under</label>
+                    
+                    <p class="mx-2">avg</p>
+                    
+                    <input type="radio" class="btn-check" name="pick3" id="overBtn1" value="true" checked disabled>
+                    <label for="overBtn3" class="btn btn-outline-success ml-3">Over</label>
+                    {%elif userChoices[2] and not results[2] %}
+                    <input type="radio" class="btn-check" name="pick3" id="underBtn3" value="false" disabled>
+                    <label for="underBtn3" class="btn btn-outline-danger mr-3">Under</label>
+                    
+                    <p class="mx-2">avg</p>
+                    
+                    <input type="radio" class="btn-check" name="pick3" id="overBtn3" value="true" disabled checked>
+                    <label for="overBtn3" class="btn btn-outline-danger ml-3">Over</label>
+                    {%elif not userChoices[2] and results[2] %}
+                    <input type="radio" class="btn-check" name="pick3" id="underBtn3" value="false" checked disabled>
+                    <label for="underBtn3" class="btn btn-outline-success mr-3">Under</label>
+                    
+                    <p class="mx-2">avg</p>
+                    
+                    <input type="radio" class="btn-check" name="pick3" id="overBtn3" value="true" disabled>
+                    <label for="overBtn1" class="btn btn-outline-success ml-3">Over</label>
+                    {%else%}
+                    <input type="radio" class="btn-check" name="pick3" id="underBtn3" value="false" checked disabled>
+                    <label for="underBtn3" class="btn btn-outline-danger mr-3">Under</label>
+                    
+                    <p class="mx-2">avg</p>
+                    
+                    <input type="radio" class="btn-check" name="pick3" id="overBtn3" value="true" disabled>
+                    <label for="overBtn3" class="btn btn-outline-danger ml-3">Over</label>
+                    {%endif%}
+                </div>
+            </div>
+            
+        </form>
+    </div>
+</div>
+{% endblock %}
