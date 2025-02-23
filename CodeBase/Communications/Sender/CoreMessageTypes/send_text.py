@@ -7,7 +7,7 @@ from CodeBase.secret import Secret
 from CodeBase.StandardFilePathing.get_secret_folder import get_secret_folder
 
 
-def send_text():
+def send_text(number_to_text):
     # Define where codebase should look for "secret" location
     secret_path = get_secret_folder()
 

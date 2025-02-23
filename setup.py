@@ -20,4 +20,4 @@ if __name__ == "__main__":
     setup_communications(secret_folder, message_folder)
 
     # Creates local DB and populates tables with dummy data.
-    create_db_and_populate(database_path)
+    # create_db_and_populate(database_path)

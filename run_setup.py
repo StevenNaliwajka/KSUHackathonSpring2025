@@ -5,7 +5,7 @@ import sys
 if __name__ == "__main__":
     # NOT PERMA. QUICK AND DIRTY VENV CREATION FOR PROTOTYPING.
 
-    packages_to_install = ["twilio", "pyodbc"]
+    packages_to_install = ["pyodbc"]
 
     # Define the venv directory
     venv_dir = os.path.join(os.path.dirname(__file__), 'venv')
@@ -58,5 +58,6 @@ if __name__ == "__main__":
         # print("All packages are already installed.")
 
     # Run the main script using the virtual environment Python
-    main_script = os.path.join(os.path.dirname(__file__), 'CodeBase', "ComeToTheGame", "come_to_the_game.py")
+    main_script = os.path.join(os.path.dirname(__file__), "setup.py")
+    # print(f"Running {main_script}")
     subprocess.run([venv_python, main_script] + sys.argv[1:])

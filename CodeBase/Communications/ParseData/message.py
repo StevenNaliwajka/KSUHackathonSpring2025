@@ -1,12 +1,9 @@
-import os
 import re
 
-from dotenv import load_dotenv
-
 from CodeBase.Communications.ParseData.validate_json_file import validate_json_file
-from CodeBase.Communications.Sender.send_email import send_email
+from CodeBase.Communications.Sender.CoreMessageTypes.send_email import send_email
 from CodeBase.Communications.Sender.send_sql import send_sql
-from CodeBase.Communications.Sender.send_text import send_text
+from CodeBase.Communications.Sender.CoreMessageTypes.send_text import send_text
 
 
 class Message:
