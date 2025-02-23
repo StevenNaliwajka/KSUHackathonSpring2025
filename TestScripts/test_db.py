@@ -2,7 +2,6 @@ import os
 import subprocess
 import sys
 
-from CodeBase.StandardFilePathing.get_project_root import get_project_root
 
 if __name__ == "__main__":
     # NOT PERMA. QUICK AND DIRTY VENV CREATION FOR PROTOTYPING.
