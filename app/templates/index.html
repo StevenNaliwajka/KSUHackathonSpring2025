@@ -4,7 +4,7 @@
 {% block content %}
 <div class="home login">
     <h1 class="headerhome text-center">Enter Your Detaills</h1>
-    <form methods="POST" action="/">
+    <form method="POST" action="/">
         <div class="mb-3">
             <label for="name" class="form-label">Name:</label>
             <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
@@ -15,13 +15,13 @@
         </div>
         <div class="mx-auto mb-3">
             <div class="form-check form-check-inline mr-300">
-                <input class="form-check-input" type="checkbox" value="True" checked id="weatherUpdates" name="weatherUpdates">
+                <input class="form-check-input" type="checkbox" value="False" id="weatherUpdates" name="weatherUpdates">
                 <label class="form-check-label" for="weatherUpdates">
                   Opt in for Weather updates
                 </label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" value="True" id="futureGames" name="futureGames">
+                <input class="form-check-input" type="checkbox" value="False" id="futureGames" name="futureGames">
                 <label class="form-check-label" for="futureGames">
                   Opt in for future games
                 </label>
