@@ -1,0 +1,28 @@
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+    {% for athlete in athletes %}
+    <div class="">
+        <img src="static/blankProfile.png" alt="athlete photo">
+        <p class="bold">Athlete Name</p>
+        <form action="/dashboard" method="post">
+            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check" name="overUnderBtn" id="underBtn" value="false">
+                <label for="underBtn" class="btn btn-outline-primary">Under</label>
+                <p>avg</p>
+                <input type="radio" class="btn-check" name="overUnderBtn" id="overBtn" value="true">
+                <label for="overBtn" class="btn btn-outline-primary">Over</label>
+            </div>
+        </form>
+    </div>
+    {% endfor %}
+    <div>
+        <p>Who will win?</p>
+        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="homeAwayBtn" id="homeBtn" value="true">
+            <label for="homeBtn" class="btn btn-outline-primary">Home</label>
+            <input type="radio" class="btn-check" name="homeAwayBtn" id="awayBtn" value="false">
+            <label for="awayBtn" class="btn btn-outline-primary">Away</label>
+        </div>
+    </div>
+{% endblock %}
