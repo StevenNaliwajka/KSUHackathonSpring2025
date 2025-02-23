@@ -3,17 +3,21 @@ from flask import render_template, request, redirect, url_for, session
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    data = request.form
+
     if request.method=='POST':
+        
         name = request.form.get('name')
         phone = request.form.get('phone')
-        weather_updates= form.get('weatherUpdates') == "yes"
-        future_games = form.get('futureGames') == "yes"
+        weather_updates = request.form.get('weatherUpdates')
+        future_games = request.form.get('futureGames')
 
+        
         session["user"] = {
             "name": name,
             "phone": phone,
             "weather_updates": weather_updates,
-            "future_games": future_games
+            "future_games": future_games,
         }
         return redirect(url_for("dashboard"))
 
@@ -46,20 +50,18 @@ def submit_picks():
     }
 
 #True is over false is under
-    correct_answer = {
-        "": "True",
-        "": "False",
-        "": "True",
-        "": "False",
-        "": "True",
+    correct_answers = {
+        "pick1": "True",
+        "pick2": "False",
+        "pick3": "True",
     }
 
     points = 0
     results = {}
     for pick, user_choice in picks.items():
-        correct = user_choice == correct_answers[pick]
-        results[pick] = correct
-        if correct:
+        is_correct = user_choice == correct_answers[pick]
+        results[pick] = is_correct
+        if is_correct:
             points +=1
 
 
