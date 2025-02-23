@@ -17,8 +17,10 @@ def send_email(contact, subject, body):
     msg.attach(MIMEText(body, "plain"))
 
     try:
-        # Directly use SMTP_SSL for SSL connections
-        server = smtplib.SMTP_SSL(secret.smtp_server, secret.smtp_port)
+        server = smtplib.SMTP()
+        server.set_debuglevel(1)  # Enable debug output
+        server.connect(secret.smtp_server, secret.smtp_port)
+        server.starttls()  # Secure the connection
         server.login(secret.user_email_address, secret.app_password)
         server.sendmail(secret.user_email_address, contact, msg.as_string())
         server.quit()

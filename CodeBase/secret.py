@@ -12,6 +12,10 @@ class Secret:
         self.smtp_port = os.getenv("SMTP_PORT")
         self.user_email_address = os.getenv("USER_EMAIL_ADDRESS")
         self.app_password = os.getenv("APP_PASSWORD")
+        print(self.smtp_server)
+        print(self.smtp_port)
+        print(self.user_email_address)
+        print(self.app_password)
 
         # Text
         text_secret_path = os.path.join(secret_folder, 'text_secret.env')
