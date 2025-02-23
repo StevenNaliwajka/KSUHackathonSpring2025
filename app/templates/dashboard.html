@@ -1,21 +1,46 @@
 {% block title %}Dashboard{% endblock %}
 
 {% block content %}
-    {% for athlete in athletes %}
+<div class="container-fluid">
     <div class="">
         <img src="static/blankProfile.png" alt="athlete photo">
-        <p class="bold">Athlete Name</p>
+        <p class="bold">Athlete 1 Name</p>
         <form action="/dashboard" method="post">
             <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                <input type="radio" class="btn-check" name="overUnderBtn" id="underBtn" value="false">
-                <label for="underBtn" class="btn btn-outline-primary">Under</label>
+                <input type="radio" class="btn-check" name="overUnderBtn" id="underBtn1" value="false">
+                <label for="underBtn1" class="btn btn-outline-primary">Under</label>
                 <p>avg</p>
-                <input type="radio" class="btn-check" name="overUnderBtn" id="overBtn" value="true">
-                <label for="overBtn" class="btn btn-outline-primary">Over</label>
+                <input type="radio" class="btn-check" name="overUnderBtn" id="overBtn1" value="true">
+                <label for="overBtn1" class="btn btn-outline-primary">Over</label>
             </div>
         </form>
     </div>
-    {% endfor %}
+    <div class="">
+        <img src="static/blankProfile.png" alt="athlete photo">
+        <p class="bold">Athlete 2 Name</p>
+        <form action="/dashboard" method="post">
+            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check" name="overUnderBtn" id="underBtn2" value="false">
+                <label for="underBtn2" class="btn btn-outline-primary">Under</label>
+                <p>avg</p>
+                <input type="radio" class="btn-check" name="overUnderBtn" id="overBtn2" value="true">
+                <label for="overBtn2" class="btn btn-outline-primary">Over</label>
+            </div>
+        </form>
+    </div>
+    <div class="">
+        <img src="static/blankProfile.png" alt="athlete photo">
+        <p class="bold">Athlete 3 Name</p>
+        <form action="/dashboard" method="post">
+            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check" name="overUnderBtn" id="underBtn3" value="false">
+                <label for="underBtn3" class="btn btn-outline-primary">Under</label>
+                <p>avg</p>
+                <input type="radio" class="btn-check" name="overUnderBtn" id="overBtn3" value="true">
+                <label for="overBtn3" class="btn btn-outline-primary">Over</label>
+            </div>
+        </form>
+    </div>
     <div>
         <p>Who will win?</p>
         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
@@ -25,4 +50,7 @@
             <label for="awayBtn" class="btn btn-outline-primary">Away</label>
         </div>
     </div>
+</div>
+    
+<button type="button" class="btn btn-primary">Submit</button>
 {% endblock %}
