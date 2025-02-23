@@ -1,5 +1,4 @@
 import os
-import pymssql
 import sys  # Added import for sys
 
 from CodeBase.StandardFilePathing.get_sql_scripts_folder import get_sql_scripts_folder
