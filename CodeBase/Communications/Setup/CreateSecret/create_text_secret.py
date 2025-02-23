@@ -8,7 +8,7 @@ def create_text_secret(secret_path):
     path.mkdir(parents=True, exist_ok=True)
 
     # Define the path for the .env file
-    env_file_path = path / "mail_secret.env"
+    env_file_path = path / "text_secret.env"
 
     if not env_file_path.exists():
         # Define the contents of the .env file

@@ -1,5 +1,4 @@
 import os
-import pyodbc
 import sys  # Added import for sys
 
 from CodeBase.StandardFilePathing.get_sql_scripts_folder import get_sql_scripts_folder
@@ -9,9 +8,10 @@ def call_sql_script(script_name, params=None):
     script_folder = get_sql_scripts_folder()
     script_path = os.path.join(script_folder, script_name)
     # print(pyodbc.drivers())
-    conn_str = get_db_conn_str()
+    #conn_str = get_db_conn_str()
+    connection = get_db_conn_str()
     # Connect to the database
-    connection = pyodbc.connect(conn_str)
+    # connection = pymssql.connect(conn_str)
     cursor = connection.cursor()
     print(script_path)
     # Read the SQL query from the SQL file

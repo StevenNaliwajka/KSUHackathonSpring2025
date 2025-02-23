@@ -7,7 +7,7 @@ if __name__ == "__main__":
 
     os.environ["FLASK_APP"] = "app.py"
 
-    packages_to_install = ["Flask", "app", "python-dotenv" ]
+    packages_to_install = []
 
     # Define the venv directory
     venv_dir = os.path.join(os.path.dirname(__file__), 'venv')

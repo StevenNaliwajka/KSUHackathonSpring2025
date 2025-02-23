@@ -1,4 +1,5 @@
 import os
+import pymssql
 
 from dotenv import load_dotenv
 
@@ -18,8 +19,8 @@ def get_db_conn_str():
     username = os.getenv("DB_USERNAME")
     password = os.getenv("DB_PASSWORD")
 
+    '''
     conn_str = (
-        f'DRIVER={{{driver}}};'  
         f'SERVER={server},{port};'
         f'DATABASE={database};'
         f'UID={username};'
@@ -28,5 +29,13 @@ def get_db_conn_str():
         f'TrustServerCertificate=no;'
         f'Connection Timeout=30;'
     )
-    print(conn_str)
-    return conn_str
+    '''
+    connection = pymssql.connect(
+        server=server,
+        user=username,
+        password=password,
+        database=database,
+        port=port
+    )
+    #print(connection)
+    return connection
