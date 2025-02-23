@@ -9,7 +9,10 @@ if __name__ == "__main__":
 
     packages_to_install = []
 
-    proj_root= get_project_root()
+    num_directories = 2
+    current_directory = os.path.abspath(__file__)
+    up_levels = ['..'] * num_directories
+    proj_root = os.path.abspath(os.path.join(current_directory, *up_levels))
     # Define the venv directory
     venv_dir = os.path.join(proj_root, 'venv')
 
