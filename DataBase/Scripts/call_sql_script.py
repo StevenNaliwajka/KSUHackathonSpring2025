@@ -8,7 +8,6 @@ def call_sql_script(script_name, params=None):
     script_folder = get_sql_scripts_folder()
     script_path = os.path.join(script_folder, script_name)
     # print(pyodbc.drivers())
-    #conn_str = get_db_conn_str()
     connection = get_db_conn_str()
     # Connect to the database
     # connection = pymssql.connect(conn_str)

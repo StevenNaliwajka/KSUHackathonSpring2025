@@ -63,6 +63,13 @@ if __name__ == "__main__":
         # print("All packages are already installed.")
 
     # Run the main script using the virtual environment Python
-    main_script = os.path.join(os.path.dirname(__file__), "Core", "test_db_core.py")
+    main_script = os.path.join(os.path.dirname(__file__), "test_core_selector.py")
     print(f"Running {main_script}")
-    subprocess.run([venv_python, main_script] + sys.argv[1:])
+
+    test_file_name = "test_db_core.py"
+    '''
+    subprocess.run([venv_python, main_script, test_file_name] + sys.argv[1:])
+    '''
+    args = sys.argv[1:] if len(sys.argv) > 1 else [test_file_name]
+
+    subprocess.run([venv_python, main_script] + args)
