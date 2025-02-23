@@ -27,8 +27,6 @@ def index():
 def dashboard():
     user = session.get("user")
 
-    if not user:
-        return redirect(url_for("index"))
     
     #place holder list to track users input for the picks until database is done
     user_picks = []
@@ -47,6 +45,7 @@ def submit_picks():
         "pick1": request.form.get("pick1"),
         "pick2": request.form.get("pick2"),
         "pick3": request.form.get("pick3"),
+        "winner": request.form.get("winner"),
     }
 
 #True is over false is under
@@ -54,6 +53,7 @@ def submit_picks():
         "pick1": "True",
         "pick2": "False",
         "pick3": "True",
+        "winner": "Home"
     }
 
     points = 0
