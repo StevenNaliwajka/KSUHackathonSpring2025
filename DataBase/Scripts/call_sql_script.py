@@ -13,7 +13,7 @@ def call_sql_script(script_name, params=None):
     # Connect to the database
     connection = pyodbc.connect(conn_str)
     cursor = connection.cursor()
-
+    print(script_path)
     # Read the SQL query from the SQL file
     with open(script_path, 'r') as file:
         sql_query = file.read()

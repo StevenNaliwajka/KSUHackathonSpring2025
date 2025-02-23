@@ -5,5 +5,5 @@ if __name__ == '__main__':
     # Here, we're assuming you want to pass a student id to the SQL script.
     print("Testing Script")
 
-    data = call_sql_script("get_athlete_soccer_data")
+    data = call_sql_script("get_athlete_soccer_data.sql")
     print(data)
