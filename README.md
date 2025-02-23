@@ -18,7 +18,7 @@ Must also install freetds, package manager is unique per distro.
 
 ## CONFIG:
 After setup. See "Secret/" in project root to fill out 
-- db_secret.env : Stores login info for a MS SQL DB
+- db_secret.env : Stores login info for an MS SQL DB.
 - mail_secret.env : Stores login info for automation of sending emails.
 - text_secret.env : stores login info for automation of sending texts.
 

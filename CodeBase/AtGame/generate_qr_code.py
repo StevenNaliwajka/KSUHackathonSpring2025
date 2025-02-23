@@ -1,4 +1,5 @@
 import os
+import sys
 
 import qrcode
 from qrcode.main import QRCode
@@ -25,7 +26,12 @@ def generate_qr_code(website_url):
 
     # Save the QR code as an image file
     root = get_project_root()
-    qr_image.save(os.path.join(root,"qrcode.png"))
+    qr_image.save(os.path.join(root,"website_qrcode.png"))
 
     # Show the QR code
     qr_image.show()
+
+if __name__ == '__main__':
+    #arguments = sys.argv[1:]
+    arguments = "localhost"
+    generate_qr_code(arguments[0])
