@@ -13,3 +13,4 @@ def test_db_core():
     print(data)
     data_2 = call_sql_script("get_athlete_vollyball.sql", 200)
     print(data_2)
+    call_sql_script("push_stuff_to_db.sql", [150, "steven"])
