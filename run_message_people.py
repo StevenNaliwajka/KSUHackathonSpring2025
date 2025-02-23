@@ -5,7 +5,7 @@ import sys
 if __name__ == "__main__":
     # NOT PERMA. QUICK AND DIRTY VENV CREATION FOR PROTOTYPING.
 
-    packages_to_install = ["twilio"]
+    packages_to_install = ["twilio", "pyodbc"]
 
     # Define the venv directory
     venv_dir = os.path.join(os.path.dirname(__file__), 'venv')

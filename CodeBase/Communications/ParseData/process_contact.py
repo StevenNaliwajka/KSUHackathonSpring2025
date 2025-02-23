@@ -1,6 +1,7 @@
 import re
 
 from CodeBase.Communications.Sender.send_email import send_email
+from CodeBase.Communications.Sender.send_sql import send_sql
 from CodeBase.Communications.Sender.send_text import send_text
 
 
