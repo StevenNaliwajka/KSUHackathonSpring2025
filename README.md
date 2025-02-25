@@ -1,4 +1,19 @@
 # KSUHackathonSpring2025
+### Everything in this repo was created within 30~ hours for a Hackathon.
+
+-----------------------------------------------
+## Overview:
+Our group's work for the KSU Sports Innovation Hackathon in Feb 2025.  
+We placed first for the 'Fan Engagement' section.
+
+Justin Owen: front end web dev  
+Katherine smith: front end web dev, interface with the back end  
+Jean-Jacques Mutumbo: cloud DB management  
+Steven Naliwajka: back end  
+
+[PPT Presentation](https://github.com/StevenNaliwajka/KSUHackathonSpring2025/blob/main/KSU%20Hackathon%20February%202025%20Presentation.pdf)  
+[Demo Video](https://youtu.be/4KzcPm3jDe8)
+-----------------------------------------------
 ## SETUP:
 Ensure you have python installed, tested on 3.9+
 
